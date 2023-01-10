@@ -30,16 +30,13 @@ keys_to_fix = ['ObsValue', 'ObsError', 'PreQC']
 for date in dates:
     date = JediDate(date)
     obs_name = f'{config.source_path}/{date}/{config.provider}.obs.{config.obs_type}.{date}.{config.window_length}.nc4'
-    if not(os.path.exists(obs_name)):
-      print( f'{obs_name} does not exist')
-    else:
-      print( f'processing {obs_name}')
-  
-    with h5py.File(obs_name, 'r+') as dst:
-      for key in keys_to_fix:
-        if f"/{key}/aerosol_optical_depth_4" in dst.keys():
-          copy_to(h5obj=dst,
-            source=f"/{key}/aerosol_optical_depth_4",
-            target=f"/{key}/aerosol_optical_depth")
-          del dst[f"{key}/aerosol_optical_depth_4"] 
-
+    try:
+        with h5py.File(obs_name, 'r+') as dst:
+          for key in keys_to_fix:
+            if f"/{key}/aerosol_optical_depth_4" in dst.keys():
+              copy_to(h5obj=dst,
+                source=f"/{key}/aerosol_optical_depth_4",
+                target=f"/{key}/aerosol_optical_depth")
+              del dst[f"{key}/aerosol_optical_depth_4"]
+    except(FileNotFoundError):
+        print(f'{obs_name} does not exist')
