@@ -1,0 +1,7 @@
+start: '2021-08-01T03:00:00Z'
+end: '2021-08-09T21:00:00Z'
+window_length: PT6H
+obs_frequency: PT6H
+provider: 'noaa'
+obs_type: 'viirs_n20_aod-thinned'
+source_path : '/work/noaa/da/maryamao/r2d2_experiments_orion/noaa/obs'

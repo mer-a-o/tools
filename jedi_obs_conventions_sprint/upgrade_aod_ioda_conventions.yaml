@@ -1,0 +1,21 @@
+source_path: '/work/noaa/da/jedipara/r2d2_archive_orion/nasa/obs'
+output_path: '/work/noaa/da/maryamao/r2d2_experiments_orion/nasa_conventions/obs'
+jedi_build: '/work/noaa/da/maryamao/JEDI/fv3-bundle/build/bin' 
+obsspace_yaml: '/work/noaa/da/maryamao/JEDI/fv3-bundle/ioda/share/ioda/yaml/validation/ObsSpace.yaml'
+
+start: '2021-08-01T03:00:00Z'
+end: '2021-08-09T21:00:00Z'
+window_length: PT6H
+obs_frequency: PT6H
+
+## modis
+provider: 'nasa'
+obs_type: 'modis_aqua_aod'
+#obs_type: 'modis_terra_aod'
+
+## viirs
+#provider: 'noaa'
+#obs_type: 'viirs_n20_aod-thinned'
+#obs_type: 'viirs_npp_aod-thinned'
+#obs_type: 'viirs_n20_aod'
+#obs_type: 'viirs_npp_aod'
