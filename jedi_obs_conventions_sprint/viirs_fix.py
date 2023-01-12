@@ -45,5 +45,10 @@ for date in dates:
                                 target=f"/{key}/aerosol_optical_depth")
                         del dst[f"{key}/aerosol_optical_depth_4"]
                 dst.close()
-        except FileNotFoundError:
-            print(f'{obs_name} does not exist')
+        except FileNotFoundError as fnfe:
+            print(fnfe)
+            pass
+        except OSError as ose:
+            print(ose)
+            pass
+
