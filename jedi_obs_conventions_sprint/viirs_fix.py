@@ -44,5 +44,6 @@ for date in dates:
                                 source=f"/{key}/aerosol_optical_depth_4",
                                 target=f"/{key}/aerosol_optical_depth")
                         del dst[f"{key}/aerosol_optical_depth_4"]
+                dst.close()
         except FileNotFoundError:
             print(f'{obs_name} does not exist')
