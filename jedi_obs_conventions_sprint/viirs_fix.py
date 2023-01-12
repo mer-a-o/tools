@@ -31,7 +31,7 @@ keys_to_fix = ['ObsValue', 'ObsError', 'PreQC']
 for date in dates:
     date = JediDate(date)
     for obs_type in obs_types:
-        obs_name = f'{config.source_path}/{date}/{config.provider}.obs.{config.obs_type}.{date}.{config.window_length}.nc4'
+        obs_name = f'{config.source_path}/{date}/{config.provider}.obs.{obs_type}.{date}.{config.window_length}.nc4'
         try:
             with h5py.File(obs_name, 'r+') as dst:
                 for key in keys_to_fix:

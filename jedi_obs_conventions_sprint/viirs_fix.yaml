@@ -8,4 +8,4 @@ obs_types:
     - 'viirs_n20_aod'
     - 'viirs_npp_aod-thinned'
     - 'viirs_npp_aod'
-source_path : '/data/users/elingerfelt/r2d2_archive_s4_elingerfelt/noaa/obs'
+source_path: '/data/users/elingerfelt/r2d2_archive_s4_elingerfelt/noaa/obs'
